@@ -1,0 +1,16 @@
+<h1>*** Welcome to the longest word-game!***</h1>
+<h2>Here is your grid:</h2>
+<h2><%= @grid %></h2>
+<h2>----------------------------------------------------</h2>
+
+<h1>What is your best guess?</h1>
+
+<form action="score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" id="attempt" name="attempt" placeholder="what is your best guess?">
+  <input type="hidden" id="grid" name="grid" value='<%= @grid %>'>
+  <input type="hidden" id="time_start" name="time_start" value='<%= @time_start %>'>
+  <input type="submit" value="Go for it!">
+</form>
+
+
